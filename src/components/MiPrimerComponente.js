@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Form, Button } from 'react-bootstrap'
+import RecibirProps from './RecibirProps'
 
 const MiPrimerComponente = () => {
     const [num1, setNum1] = useState("")
     const [num2, setNum2] = useState("")
-    const [total,setTotal] = useState(0)
+    const [total, setTotal] = useState("")
+
     const handleNume1 = (e) => setNum1(e.currentTarget.value)
     const handleNume2 = (e) => setNum2(e.currentTarget.value)
     const handleSumar = (e) => {
@@ -15,6 +17,11 @@ const MiPrimerComponente = () => {
             console.log("los campos estan vacíos")
         }
     }
+
+    useEffect(() => {
+        console.log("Hola")
+    }, [])
+
     return (
         <>
             <h1>Formulario Calculadora</h1>
@@ -26,9 +33,8 @@ const MiPrimerComponente = () => {
                     Submit
                 </Button>
             </Form>
-            <h2>
-                Total: {total}
-            </h2>
+            {total !== "" ? <RecibirProps resultado={total}/> : null}
+
         </>
     )
 }
