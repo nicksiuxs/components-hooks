@@ -1,9 +1,12 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import MiPrimerComponente from './components/MiPrimerComponente';
 
 function App() {
   return (
-    <div>
-      hola mundo
-    </div>
+    <>
+      <MiPrimerComponente />
+    </>
   );
 }
 
